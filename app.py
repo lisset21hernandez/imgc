@@ -3,14 +3,14 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route('/imc', methods=['GET'])
+@app.route('/imc/', methods=['GET'])
 def calcularIMC():
     peso = float(request.args.get('peso'))
     altura = float(request.args.get('altura'))
     resultado = peso/(altura*altura)
     return jsonify({"value",resultado})
     
-@app.route('/igc', methods=['GET'])
+@app.route('/igc/', methods=['GET'])
 def calcularIGC():
     cint = float(request.args.get('cint')) 
     altura = float(request.args.get('alt'))
@@ -18,7 +18,7 @@ def calcularIGC():
     return jsonify({"value",resultado})
 
 
-@app.route('/calorias', methods=['GET'])
+@app.route('/calorias/', methods=['GET'])
 def calcularCalorias():
     peso = float(request.args.get('peso'))
     distancia = float(request.args.get('distancia'))
