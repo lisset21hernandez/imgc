@@ -1,7 +1,7 @@
 
 from flask import Flask, jsonify, request
 
-app = Flask()
+app = Flask(__name__)
 
 @app.route('/imc', methods=['GET'])
 def calcularIMC():
